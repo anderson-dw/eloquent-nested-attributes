@@ -114,8 +114,8 @@ trait HasNestedAttributesTrait
             if ($this->allowDestroyNestedAttributes($params)) {
                 return $model->delete();
             }
-            return $model->update($stack);
-        } else if ($relation->create($stack)) {
+            return $model->update($params);
+        } else if ($relation->create($params)) {
             return true;
         }
         return false;
